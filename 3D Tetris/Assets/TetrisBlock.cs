@@ -10,8 +10,8 @@ public class TetrisBlock : MonoBehaviour
 	private float time;
 	public float timePeriod;
 	public static int height = 10;
-	public static int width = 8;
-	public static int length = 8;
+	public static int width = 6;
+	public static int length = 6;
 	private static Transform[,,] grid = new Transform[width,height,length];
 
 	bool canFall = true;
@@ -19,7 +19,7 @@ public class TetrisBlock : MonoBehaviour
     void Start()
     {
         time = 0.0f;
-		timePeriod = 1.0f;
+		timePeriod = 1.4f;
     }
 
     // Update is called once per frame
@@ -95,10 +95,13 @@ public class TetrisBlock : MonoBehaviour
 		else if(Input.GetKeyDown(KeyCode.P)) {
 			canFall = !canFall;
 		}
+		//hard drop
 		else if(Input.GetKeyDown(KeyCode.H)) {
+			
 			while(ValidMove()) {
 				transform.position += new Vector3(0, -1, 0);
 			}
+			
 			transform.position -= new Vector3(0, -1, 0);
 			AddToGrid();
 			this.enabled = false;
@@ -194,5 +197,12 @@ public class TetrisBlock : MonoBehaviour
 			int roundedZ = Mathf.RoundToInt(children.transform.position.z);
 			grid[roundedX, roundedY, roundedZ] = children;
 		}
+	}
+	
+	void setSpeed(int numCleared) {
+		while(timePeriod > .6) {
+			
+		}
+		
 	}
 }

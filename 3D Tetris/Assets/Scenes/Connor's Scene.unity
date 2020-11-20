@@ -220,6 +220,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8295188625859661384, guid: 5f6a4c546bd8a7e428f3c4ed157943aa,
+        type: 3}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[1]
+      value: 
+      objectReference: {fileID: 8295188625859661384, guid: 5f6a4c546bd8a7e428f3c4ed157943aa,
+        type: 3}
     - target: {fileID: 3655594719912741760, guid: 61bd2b47ab5445e4f915594b083b8b11,
         type: 3}
       propertyPath: m_LocalPosition.x

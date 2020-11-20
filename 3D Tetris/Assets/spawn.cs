@@ -17,7 +17,7 @@ public class spawn : MonoBehaviour
     // Update is called once per frame
     public void NewTetromino()
     {
-		if(bagCount == 7) {
+		if(bagCount == Tetrominoes.Length) {
 			Shuffle();
 			bagCount = 0;
 		}
