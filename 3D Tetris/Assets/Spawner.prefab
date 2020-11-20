@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tetrominoes:
+  - {fileID: 9107705398723985678, guid: 8279e582aa57b1242bdf57b0d5721edd, type: 3}
   - {fileID: 2368128955316126606, guid: 67c54ad98cde9ce41b76a2832c7196ab, type: 3}
+  - {fileID: 4683907168664583322, guid: cdf2e1ca93415c84fa24855194a56175, type: 3}
+  - {fileID: 8295188625859661384, guid: 5f6a4c546bd8a7e428f3c4ed157943aa, type: 3}
+  - {fileID: 6087236432281115806, guid: 629fd729c6458da4f809083e0ae8826a, type: 3}
+  - {fileID: 5984023971172856850, guid: a60104b84b98afa419edcf552f4241f4, type: 3}
+  - {fileID: 1597086282006562504, guid: e38998928991d6c42a56f246be62d65f, type: 3}
