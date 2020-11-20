@@ -382,7 +382,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8295188625859661385}
   - component: {fileID: 2137661100534096674}
-  - component: {fileID: -9150130023242450734}
   m_Layer: 0
   m_Name: O-Tetramino
   m_TagString: Untagged
@@ -409,20 +408,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2137661100534096674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8295188625859661384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d0bf61cba4d9254fb89d5ff2680caff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationPoint: {x: 0, y: 0, z: 0}
-  timePeriod: 0
---- !u!114 &-9150130023242450734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
