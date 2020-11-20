@@ -32,14 +32,15 @@ public class TetrisBlock : MonoBehaviour
 				 AddToGrid();
 				 this.enabled = false;
 				 FindObjectOfType<spawn>().NewTetromino(); 
+				 CheckForLines();
 			 }
 			 time = 0;
 		}
 		
 		if(Input.GetKeyDown(KeyCode.W)) {
-			transform.position += new Vector3(0, 0, -1);
+			transform.position += new Vector3(0, 0, 1);
 			if(!ValidMove()) {
-				transform.position -= new Vector3(0, 0, -1);
+				transform.position -= new Vector3(0, 0, 1);
 			}
 		}
 		else if(Input.GetKeyDown(KeyCode.A)) {
@@ -55,9 +56,9 @@ public class TetrisBlock : MonoBehaviour
 			}
 		}
 		else if(Input.GetKeyDown(KeyCode.S)) {
-			transform.position += new Vector3(0, 0,1);
+			transform.position += new Vector3(0, 0,-1);
 			if(!ValidMove()) {
-				transform.position -= new Vector3(0, 0, 1);
+				transform.position -= new Vector3(0, 0, -1);
 			}
 		}
 		else if(Input.GetKeyDown(KeyCode.Space)) {
@@ -93,6 +94,16 @@ public class TetrisBlock : MonoBehaviour
 		}
 		else if(Input.GetKeyDown(KeyCode.P)) {
 			canFall = !canFall;
+		}
+		else if(Input.GetKeyDown(KeyCode.H)) {
+			while(ValidMove()) {
+				transform.position += new Vector3(0, -1, 0);
+			}
+			transform.position -= new Vector3(0, -1, 0);
+			AddToGrid();
+			this.enabled = false;
+			FindObjectOfType<spawn>().NewTetromino(); 
+			CheckForLines();
 		}
 		
 		if(canFall)
