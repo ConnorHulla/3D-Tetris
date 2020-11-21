@@ -223,13 +223,14 @@ PrefabInstance:
     - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
         type: 3}
       propertyPath: Tetrominoes.Array.size
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
         type: 3}
       propertyPath: Tetrominoes.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1597086282006562504, guid: e38998928991d6c42a56f246be62d65f,
+        type: 3}
     - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
         type: 3}
       propertyPath: Tetrominoes.Array.data[0]
@@ -240,7 +241,25 @@ PrefabInstance:
         type: 3}
       propertyPath: Tetrominoes.Array.data[1]
       value: 
-      objectReference: {fileID: 8295188625859661384, guid: 5f6a4c546bd8a7e428f3c4ed157943aa,
+      objectReference: {fileID: 4683907168664583322, guid: cdf2e1ca93415c84fa24855194a56175,
+        type: 3}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[3]
+      value: 
+      objectReference: {fileID: 5984023971172856850, guid: a60104b84b98afa419edcf552f4241f4,
+        type: 3}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[5]
+      value: 
+      objectReference: {fileID: 2368128955316126606, guid: 67c54ad98cde9ce41b76a2832c7196ab,
+        type: 3}
+    - target: {fileID: 1665568592677302832, guid: 61bd2b47ab5445e4f915594b083b8b11,
+        type: 3}
+      propertyPath: Tetrominoes.Array.data[6]
+      value: 
+      objectReference: {fileID: 9107705398723985678, guid: 8279e582aa57b1242bdf57b0d5721edd,
         type: 3}
     - target: {fileID: 3655594719912741760, guid: 61bd2b47ab5445e4f915594b083b8b11,
         type: 3}
