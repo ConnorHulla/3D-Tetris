@@ -8,23 +8,25 @@ public class TetrisBlock : MonoBehaviour
 	public Vector3 rotationPoint;
 	
 	private float time;
-	public float timePeriod;
+	public static float timePeriod = 1.4f;
 	public static int height = 10;
-	public static int width = 8;
-	public static int length = 8;
+	public static int width = 6;
+	public static int length = 6;
 	private static Transform[,,] grid = new Transform[width,height,length];
-
+	public bool canMove = true;
 	bool canFall = true;
     // Start is called before the first frame update
     void Start()
     {
         time = 0.0f;
-		timePeriod = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+		if(canMove == false) {
+			return;
+		}
         if (time > timePeriod){
 			 transform.position += new Vector3(0,-1,0);
 			 if(!ValidMove()) {
@@ -95,10 +97,13 @@ public class TetrisBlock : MonoBehaviour
 		else if(Input.GetKeyDown(KeyCode.P)) {
 			canFall = !canFall;
 		}
+		//hard drop
 		else if(Input.GetKeyDown(KeyCode.H)) {
+			
 			while(ValidMove()) {
 				transform.position += new Vector3(0, -1, 0);
 			}
+			
 			transform.position -= new Vector3(0, -1, 0);
 			AddToGrid();
 			this.enabled = false;
@@ -111,6 +116,7 @@ public class TetrisBlock : MonoBehaviour
 			time += UnityEngine.Time.deltaTime;
 		}
     }
+	
 	bool ValidMove() {
 		foreach (Transform children in transform) {
 			int roundedX = Mathf.RoundToInt(children.transform.position.x);
@@ -164,6 +170,8 @@ public class TetrisBlock : MonoBehaviour
 			deleteLine(del - z);
 			z++;
 		}
+		//set the speed after line clears
+		setSpeed(z);
 	}
 	void deleteLine(int lineToDelete) {
 		//step 1: delete all the tetraminos in the line
@@ -193,6 +201,21 @@ public class TetrisBlock : MonoBehaviour
 			int roundedY = Mathf.RoundToInt(children.transform.position.y);
 			int roundedZ = Mathf.RoundToInt(children.transform.position.z);
 			grid[roundedX, roundedY, roundedZ] = children;
+		}
+	}
+	
+	
+	//the time period decreases 
+	void setSpeed(int numCleared) {
+		int i = 0;
+		while(timePeriod > 0.3f && i < numCleared) {
+			timePeriod -= .35f;
+			i++;
+		}
+		//if we went below the lowest time period
+		//set it back to .1f
+		if(timePeriod < 0.3f) {
+			timePeriod = 0.3f;
 		}
 	}
 }
