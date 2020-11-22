@@ -17,7 +17,6 @@ public class spawn : MonoBehaviour
         NewTetromino();
     }
 
-    // Update is called once per frame
     public void NewTetromino()
     {
 		if(previewTetramino != null) {
@@ -43,6 +42,9 @@ public class spawn : MonoBehaviour
 		}
     }
 	
+	public GameObject getCurrentPiece() {
+		return Tetrominoes[bagCount];
+	}
 	//shuffle the list;
 	private void Shuffle() { 
 		int randomIndex;

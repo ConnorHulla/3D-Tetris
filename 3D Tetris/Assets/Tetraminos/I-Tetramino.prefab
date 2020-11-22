@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0bf61cba4d9254fb89d5ff2680caff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GhostMaterial: {fileID: 2100000, guid: 28881eacbecef8447a6d961e468bcf29, type: 2}
   rotationPoint: {x: 0, y: 0, z: 0}
   canMove: 1
 --- !u!1 &1597086282153219124

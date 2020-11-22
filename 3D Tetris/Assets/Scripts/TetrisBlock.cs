@@ -5,8 +5,9 @@ using UnityEngine;
 public class TetrisBlock : MonoBehaviour
 {	
 
+	public Material GhostMaterial;
 	public Vector3 rotationPoint;
-	
+	private GameObject instantiated;
 	private float time;
 	public static float timePeriod = 1.4f;
 	public static int height = 12;
@@ -14,7 +15,7 @@ public class TetrisBlock : MonoBehaviour
 	public static int length = 6;
 	private static Transform[,,] grid = new Transform[width,height,length];
 	public bool canMove = true;
-	bool canFall = true;
+	bool canFall = true;	
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +28,16 @@ public class TetrisBlock : MonoBehaviour
 		if(canMove == false) {
 			return;
 		}
+		
         if (time > timePeriod){
 			 transform.position += new Vector3(0,-1,0);
 			 if(!ValidMove()) {
-				 transform.position -= new Vector3(0,-1,0);
-				 AddToGrid();
-				 this.enabled = false;
-				 FindObjectOfType<spawn>().NewTetromino(); 
-				 CheckForLines();
+				transform.position -= new Vector3(0,-1,0);
+				AddToGrid();
+				this.enabled = false;
+				FindObjectOfType<spawn>().NewTetromino(); 
+				CheckForLines();
+				Destroy(instantiated);
 			 }
 			 time = 0;
 		}
@@ -109,11 +112,15 @@ public class TetrisBlock : MonoBehaviour
 			this.enabled = false;
 			FindObjectOfType<spawn>().NewTetromino(); 
 			CheckForLines();
+			Destroy(instantiated);
 		}
 		
 		if(canFall)
 		{
 			time += UnityEngine.Time.deltaTime;
+		}
+		if(ValidMove()) {
+			ghostTetromino();
 		}
     }
 	
@@ -216,6 +223,37 @@ public class TetrisBlock : MonoBehaviour
 		//set it back to .1f
 		if(timePeriod < 0.3f) {
 			timePeriod = 0.3f;
+		}
+	}
+	
+	void ghostTetromino() {
+		if(instantiated != null) {
+			Destroy(instantiated);
+		}
+		//GameObject clone = FindObjectOfType<spawn>().getCurrentPiece();
+		instantiated = (GameObject)Instantiate(gameObject);
+		TetrisBlock ghostPiece = instantiated.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
+		ghostPiece.canMove = false;
+		if(ghostPiece.ValidMove()) {
+			ghostPiece.goDown();
+			ghostPiece.ghostify();
+		}
+		else {
+			Destroy(instantiated);
+		}
+	}
+	
+	void goDown() { 
+		while(ValidMove()) {
+			transform.position += new Vector3(0, -1, 0);
+		}	
+		transform.position -= new Vector3(0, -1, 0);
+	}
+	
+	//makes the tetramino spooky 
+	void ghostify() {
+		foreach (Transform children in transform) {
+			children.GetComponent<MeshRenderer> ().material = GhostMaterial;
 		}
 	}
 }
