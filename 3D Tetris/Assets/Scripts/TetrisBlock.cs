@@ -34,10 +34,10 @@ public class TetrisBlock : MonoBehaviour
 			 if(!ValidMove()) {
 				transform.position -= new Vector3(0,-1,0);
 				AddToGrid();
+				Destroy(instantiated);
 				this.enabled = false;
 				FindObjectOfType<spawn>().NewTetromino(); 
 				CheckForLines();
-				Destroy(instantiated);
 			 }
 			 time = 0;
 		}
@@ -109,10 +109,10 @@ public class TetrisBlock : MonoBehaviour
 			
 			transform.position -= new Vector3(0, -1, 0);
 			AddToGrid();
+			Destroy(instantiated);
 			this.enabled = false;
 			FindObjectOfType<spawn>().NewTetromino(); 
 			CheckForLines();
-			Destroy(instantiated);
 		}
 		
 		if(canFall)
@@ -124,7 +124,7 @@ public class TetrisBlock : MonoBehaviour
 		}
     }
 	
-	bool ValidMove() {
+	public bool ValidMove() {
 		foreach (Transform children in transform) {
 			int roundedX = Mathf.RoundToInt(children.transform.position.x);
 			int roundedY = Mathf.RoundToInt(children.transform.position.y);

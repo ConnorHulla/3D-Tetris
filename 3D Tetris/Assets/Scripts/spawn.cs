@@ -24,7 +24,7 @@ public class spawn : MonoBehaviour
 		}
 		
 		if(bagCount == Tetrominoes.Length -1) {	
-			Instantiate(Tetrominoes[bagCount], transform.position, Quaternion.identity);
+			spawnpiece(bagCount);
 			Shuffle();	
 			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount], previewPosition, previewRotation);
 			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
@@ -32,9 +32,8 @@ public class spawn : MonoBehaviour
 			bagCount = 0;
 		}
 		else {
-			//spawn the tetramino at the location of the spawner
-			Instantiate(Tetrominoes[bagCount], transform.position, Quaternion.identity);
-			
+			//spawn a tetramino at the current position
+			spawnpiece(bagCount);
 			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount + 1], previewPosition, previewRotation);
 			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
 			block.canMove = false;
@@ -60,5 +59,17 @@ public class spawn : MonoBehaviour
 		Tetrominoes[j] = Tetrominoes[i];
 		Tetrominoes[i] = hold;
 	}
+	
+	
+	//spawn the tetramino at the location of the spawner
+	private void spawnpiece(int n) {
+		GameObject tetramino = (GameObject)Instantiate(Tetrominoes[n], transform.position, Quaternion.identity);
+		TetrisBlock currentPiece = tetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
+		
+		if(!currentPiece.ValidMove()) {
+			Application.LoadLevel(1);
+		}
+	}
+	
 }
  
