@@ -7,30 +7,41 @@ public class spawn : MonoBehaviour
 	public GameObject[] Tetrominoes;
 	public GameObject previewTetramino;
 	public Vector3 previewPosition;
+	public Quaternion previewRotation;
     // Start is called before the first frame update
 	private static int bagCount;
     void Start()
     {
+		previewPosition = new Vector3(15, 8, 8);
 		bagCount = 0;
 		Shuffle();
         NewTetromino();
-		previewPosition = new Vector3(8, 8, 8);
     }
 
     // Update is called once per frame
     public void NewTetromino()
     {
+		if(previewTetramino != null) {
+			Destroy(previewTetramino);
+		}
 		
-		if(bagCount == Tetrominoes.Length) {
-			Shuffle();
+		if(bagCount == Tetrominoes.Length -1) {	
+			Instantiate(Tetrominoes[bagCount], transform.position, Quaternion.identity);
+			Shuffle();	
+			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount], previewPosition, previewRotation);
+			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
+			block.canMove = false;
 			bagCount = 0;
 		}
-		//spawn the tetramino at the location of the spawner
-        Instantiate(Tetrominoes[bagCount], transform.position, Quaternion.identity);
-		
-		//previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount + 1], transform.position, Quaternion.identity);
-		//previewTetramino.canMove = false;
-		bagCount++;
+		else {
+			//spawn the tetramino at the location of the spawner
+			Instantiate(Tetrominoes[bagCount], transform.position, Quaternion.identity);
+			
+			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount + 1], previewPosition, previewRotation);
+			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
+			block.canMove = false;
+			bagCount++;
+		}
     }
 	
 	//shuffle the list;

@@ -9,7 +9,7 @@ public class TetrisBlock : MonoBehaviour
 	
 	private float time;
 	public static float timePeriod = 1.4f;
-	public static int height = 10;
+	public static int height = 12;
 	public static int width = 6;
 	public static int length = 6;
 	private static Transform[,,] grid = new Transform[width,height,length];
