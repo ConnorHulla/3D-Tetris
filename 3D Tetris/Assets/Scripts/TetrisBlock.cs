@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TetrisBlock : MonoBehaviour
 {	
@@ -13,6 +14,7 @@ public class TetrisBlock : MonoBehaviour
 	public static int height = 12;
 	public static int width = 6;
 	public static int length = 6;
+	private static int score = 0;
 	private static Transform[,,] grid = new Transform[width,height,length];
 	public bool canMove = true;
 	bool canFall = true;	
@@ -176,9 +178,13 @@ public class TetrisBlock : MonoBehaviour
 		foreach (int del in linesToDelete) {
 			deleteLine(del - z);
 			z++;
+			score += 100;
 		}
 		//set the speed after line clears
 		setSpeed(z);
+		//set the score
+		Text scoreText = FindObjectOfType<Text>();
+		scoreText.text = "Score: " + score;
 	}
 	void deleteLine(int lineToDelete) {
 		//step 1: delete all the tetraminos in the line

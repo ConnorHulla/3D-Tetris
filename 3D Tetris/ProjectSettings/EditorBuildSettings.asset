@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gem's Scene.unity
     guid: cb4dc999d1af9fb438d875c0a7463dce
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 01269e73c7542f54a8624b4d6ce4ca37
   m_configObjects: {}
