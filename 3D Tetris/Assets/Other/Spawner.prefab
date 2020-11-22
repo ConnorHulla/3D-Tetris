@@ -51,3 +51,6 @@ MonoBehaviour:
   - {fileID: 6087236432281115806, guid: 629fd729c6458da4f809083e0ae8826a, type: 3}
   - {fileID: 5984023971172856850, guid: a60104b84b98afa419edcf552f4241f4, type: 3}
   - {fileID: 1597086282006562504, guid: e38998928991d6c42a56f246be62d65f, type: 3}
+  previewTetramino: {fileID: 0}
+  previewPosition: {x: 15, y: 8, z: 8}
+  previewRotation: {x: 0, y: 0, z: 0, w: 0}

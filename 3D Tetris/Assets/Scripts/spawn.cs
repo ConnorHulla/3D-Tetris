@@ -12,7 +12,6 @@ public class spawn : MonoBehaviour
 	private static int bagCount;
     void Start()
     {
-		previewPosition = new Vector3(15, 8, 8);
 		bagCount = 0;
 		Shuffle();
         NewTetromino();
