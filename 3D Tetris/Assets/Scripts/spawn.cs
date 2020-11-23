@@ -67,6 +67,7 @@ public class spawn : MonoBehaviour
 		TetrisBlock currentPiece = tetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
 		
 		if(!currentPiece.ValidMove()) {
+			currentPiece.reset();
 			Application.LoadLevel(1);
 		}
 	}
