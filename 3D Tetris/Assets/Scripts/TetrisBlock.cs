@@ -22,7 +22,10 @@ public class TetrisBlock : MonoBehaviour
     void Start()
     {
         time = 0.0f;
-    }
+		//set the score
+		Text scoreText = FindObjectOfType<Text>();
+		scoreText.text = "Score: " + score;
+	}
 
     // Update is called once per frame
     void Update()

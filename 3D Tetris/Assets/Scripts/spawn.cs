@@ -26,7 +26,7 @@ public class spawn : MonoBehaviour
 		if(bagCount == Tetrominoes.Length -1) {	
 			spawnpiece(bagCount);
 			Shuffle();	
-			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount], previewPosition, previewRotation);
+			setPrevLocation(0);
 			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
 			block.canMove = false;
 			bagCount = 0;
@@ -34,7 +34,7 @@ public class spawn : MonoBehaviour
 		else {
 			//spawn a tetramino at the current position
 			spawnpiece(bagCount);
-			previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount + 1], previewPosition, previewRotation);
+			setPrevLocation(1);
 			TetrisBlock block = previewTetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
 			block.canMove = false;
 			bagCount++;
@@ -71,5 +71,15 @@ public class spawn : MonoBehaviour
 		}
 	}
 	
+	//sets the location of the tetraminos based on the 
+	public void setPrevLocation(int number)
+	{
+		previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount+number], previewPosition, previewRotation);
+	}
+	
+	public GameObject getNextPiecePreview()
+	{
+		return previewTetramino;
+	}
 }
  
