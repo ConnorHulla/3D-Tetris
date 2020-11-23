@@ -303,6 +303,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478498471009160178, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478498471009160178, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2478498471395152976, guid: f12dda4c837a7ee46a22b8c67c7cb169,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -362,6 +372,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Start Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478498471681534775, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478498471681534775, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825766553000534700, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033712914785817383, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033712914785817383, guid: f12dda4c837a7ee46a22b8c67c7cb169,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12dda4c837a7ee46a22b8c67c7cb169, type: 3}

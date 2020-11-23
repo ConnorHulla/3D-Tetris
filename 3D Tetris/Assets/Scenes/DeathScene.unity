@@ -361,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 5742624321526381395, guid: f3f940821c4d1c541989d33ff6e1efa1,
         type: 3}
       propertyPath: m_Name
-      value: Credits
+      value: GameOver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f940821c4d1c541989d33ff6e1efa1, type: 3}

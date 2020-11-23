@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 	public bool isQuit;
 	public bool isCredits;
 	public bool isMenu;
+	public bool isHTP;
 	
 	// Start is called before the first frame update
     void Start()
@@ -37,6 +38,11 @@ public class MainMenu : MonoBehaviour
 		{
 			//Return back to main menu
 			Application.LoadLevel(0);
+		}
+		if(isHTP)
+		{
+			//Open instructions
+			Application.LoadLevel(4);
 		}
     }
 }
