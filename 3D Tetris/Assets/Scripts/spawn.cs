@@ -76,6 +76,7 @@ public class spawn : MonoBehaviour
 	public void setPrevLocation(int number)
 	{
 		previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount+number], previewPosition, previewRotation);
+		previewTetramino.layer = 5;
 	}
 	
 	public GameObject getNextPiecePreview()
