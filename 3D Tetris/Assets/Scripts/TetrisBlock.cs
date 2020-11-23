@@ -265,4 +265,8 @@ public class TetrisBlock : MonoBehaviour
 			children.GetComponent<MeshRenderer> ().material = GhostMaterial;
 		}
 	}
+	public void reset() {
+		score = 0;
+		timePeriod = 1.4f;
+	}
 }

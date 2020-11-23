@@ -67,6 +67,7 @@ public class spawn : MonoBehaviour
 		TetrisBlock currentPiece = tetramino.GetComponent(typeof(TetrisBlock)) as TetrisBlock;
 		
 		if(!currentPiece.ValidMove()) {
+			currentPiece.reset();
 			Application.LoadLevel(1);
 		}
 	}
@@ -75,6 +76,7 @@ public class spawn : MonoBehaviour
 	public void setPrevLocation(int number)
 	{
 		previewTetramino = (GameObject)Instantiate(Tetrominoes[bagCount+number], previewPosition, previewRotation);
+		previewTetramino.layer = 5;
 	}
 	
 	public GameObject getNextPiecePreview()
