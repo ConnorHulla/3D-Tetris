@@ -52,17 +52,18 @@ public class FlyCamera : MonoBehaviour
 			prevMousePos = Input.mousePosition;
 			
 		}
-		if(Input.GetKey(KeyCode.F))
+		if(Input.GetKeyUp(KeyCode.F))
 		{
-			BECam.enabled = true;
-			mainCam.enabled = false;
+			if(BECam.enabled)
+			{
+				mainCam.enabled = true;
+				BECam.enabled = false;
+			}
+			else
+			{
+				BECam.enabled = true;
+				mainCam.enabled = false;
+			}
 		}
-		else
-		{
-			mainCam.enabled = true;
-			BECam.enabled = false;
-		}
-
-		
 	}
 }
