@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool isStart;
+	public bool isQuit;
+	public bool isCredits;
+	public bool isMenu;
+	
+	// Start is called before the first frame update
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    void OnMouseUp()
     {
-        
+        if(isStart)
+		{
+			//This is to open my old scene which is the the main game
+			Application.LoadLevel(2);
+		}
+		if(isQuit)
+		{
+			//Quit the game
+			Application.Quit();
+		}
+		if(isCredits)
+		{
+			//Open credits scene
+			Application.LoadLevel(3);
+		}
+		if(isMenu)
+		{
+			//Return back to main menu
+			Application.LoadLevel(0);
+		}
     }
 }
